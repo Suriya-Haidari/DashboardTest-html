@@ -1,0 +1,158 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: #ddd;
+    display: flex;
+    width: 100%;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+.image {
+    margin-top: 2rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 30% ;
+}
+/* Sidebar */
+.headers {
+    background: black;
+    padding: 3rem;
+    margin-left: 4.4rem;
+    margin-top: -1.5rem;
+    border-radius: 2rem;
+}
+.headers .logo{
+    font-size: 1.5rem;
+}
+.sidebar-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+}
+.sidebar {
+    width: 50px;
+    background-color: #222;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+    border-right: 2px solid #444;
+    height: 100vh;
+    margin-top: auto;
+}
+.sidebar .sidebar-icons {
+    margin-top: 2rem;
+    height: 30em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: black;
+    border-radius: 2rem;
+}
+.sidebar .sidebar-icons button{
+    margin: 1rem;
+    background: transparent;
+    color: white;
+    border: none;
+    padding: 1rem;
+}
+
+/* Main Container */
+.main-container {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Dashboard Layout */
+.dashboard {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+
+/* Charts */
+.charts-container {
+    display: flex;
+    gap: 20px;
+    flex: 1;
+}
+
+.chart-card {
+    flex: 1;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+/* Colorful Cards Layout (Now on the Right) */
+.top-right-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    width: 340px;
+    margin-left: auto; 
+    align-self: flex-start;
+}
+
+.info-card {
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: bold;
+    height: 8rem;
+    width: 8rem;
+}
+.info-card button {
+    border: none;
+    background: transparent;
+}
+
+.spend { background: #FACC15; }
+.supplier { background: #FCA5A5; }
+.invoices { background: #FB923C; }
+.processed { background: #7DD3FC; }
+
+/* Status Table */
+.status-card {
+    background: #333;
+    width: 60%;
+    padding: 30px;
+    line-height: 3;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.status-pending {
+    color: red;
+    font-weight: bold;
+}
+
+.status-approved {
+    color: green;
+    font-weight: bold;
+}
+
+.status-card .download-btn {
+    margin-left: auto;
+}
+
+.circle-chart-container {
+    position: absolute;
+    bottom: 10px;
+    right: 50px;
+    background: #222;
+    border-radius: 50%;
+    width: 19rem;
+    height: 19rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#smallCircleChart {
+    width: 100px !important;
+    height: 100px !important;
+}

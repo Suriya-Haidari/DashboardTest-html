@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard UI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="headers"> 
+        <div class="sidebar-header logo">Kraya.</div>
+        <br>
+        <button class="sidebar-btn"><i class="fas fa-arrow-left"></i></button>
+       </div>
+        <div class="sidebar-icons">
+            <button class="active"><i class="fas fa-home"></i></button>
+            <button><i class="fas fa-user"></i></button>
+            <button><i class="fas fa-comment"></i></button>
+            <button><i class="fas fa-cog"></i></button>
+            <button><i class="fas fa-power-off"></i> </button>
+        </div>
+        <div class="sidebar-user">
+            <img src="./imahe..png" class="image" alt="User">
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-container">
+
+        <div class="dashboard">
+         
+            <!-- Right Side - Charts -->
+            <div class="charts-container">
+                <div class="chart-card">
+                    <h2>Invoices</h2>
+                    <button class="options-btn"><i class="fas fa-ellipsis-h"></i></button>
+                    <canvas id="invoiceChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h2>Top Selling Product</h2>
+                    <button class="options-btn"><i class="fas fa-ellipsis-h"></i></button>
+                </div>
+            </div>
+   
+            <!-- Left Side - 4 Colorful Cards in 2 Columns -->
+            <div class="top-right-cards">
+                <div class="info-card spend">
+                    <button class="info-icon"><i class="fas fa-dollar-sign"></i></button>
+                    <h3>Spend</h3>
+                    <p>$123,456</p>
+                </div>
+                <div class="info-card supplier">
+                    <button class="info-icon"><i class="fas fa-clipboard"></i></button>
+                    <h3>Supplier</h3>
+                    <p>12</p>
+                </div>
+                <div class="info-card invoices">
+                    <button class="info-icon"><i class="fas fa-shopping-cart"></i></button>
+                    <h3>Invoices</h3>
+                    <p>12</p>
+                </div>
+                <div class="info-card processed">
+                    <button class="info-icon"><i class="fas fa-chart-line"></i></button>
+                    <h3>PO Processed</h3>
+                    <p>12</p>
+                </div>
+            </div>
+
+        </div>
+        
+        <!-- Status Table -->
+        <div class="status-card">
+            <h2>Status</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>RFQ ID</th>
+                        <th>Vendor</th>
+                        <th>Vendor Contact</th>
+                        <th>Apply Date</th>
+                        <th>Status</th>
+                    </tr><hr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>KYRF00001</td>
+                        <td>Bell Gardens</td>
+                        <td>+91 700 838 1259</td>
+                        <td>03/03/2023</td>
+                        <td><span class="status-pending">Pending</span></td>
+                    </tr>
+                    <tr>
+                        <td>KYRF00002</td>
+                        <td>Bell Gardens</td>
+                        <td>+91 700 838 1259</td>
+                        <td>03/03/2023</td>
+                        <td><span class="status-approved">Approved</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+                <!-- Small Circle Chart -->
+                <div class="circle-chart-container">
+                    <canvas id="smallCircleChart"></canvas>
+                </div>
+                    </div>
+
+                    <script>
+                        const ctx = document.getElementById('invoiceChart').getContext('2d');
+                        new Chart(ctx, {
+                            type: 'bar',
+                            data: {
+                                labels: ['05 Jul', '06 Jul', '07 Jul', '08 Jul', '09 Jul', '10 Jul'],
+                                datasets: [{
+                                    label: 'Quotation',
+                                    data: [10, 20, 30, 40, 50, 60],
+                                    backgroundColor: 'orange'
+                                }, {
+                                    label: 'Approval',
+                                    data: [15, 25, 35, 45, 55, 65],
+                                    backgroundColor: 'salmon'
+                                }]
+                            },
+                        });
+                    const smallCtx = document.getElementById('smallCircleChart').getContext('2d');
+                    new Chart(smallCtx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Completed', 'Pending', 'In Progress'],
+                            datasets: [{
+                                data: [40, 30, 30],
+                                backgroundColor: ['#4CAF50', '#FFC107', '#FF5722'],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            responsive: false,
+                            maintainAspectRatio: false,
+                            cutout: '40%', 
+                            plugins: {
+                                legend: {
+                                    display: false
+                                }
+                            }
+                        }
+                    });
+                    </script>
+                </body>
+                </html>
