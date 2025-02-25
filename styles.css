@@ -142,7 +142,7 @@ body {
 
 .circle-chart-container {
     position: absolute;
-    bottom: 10px;
+    bottom: -7rem;
     right: 50px;
     background: #222;
     border-radius: 50%;
